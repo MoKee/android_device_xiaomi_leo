@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fc49760_15e8b414",
+        "filename": "mk.dependencies",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2016-03-21T14:18:54Z",
+      "side": 1,
+      "message": "这个不要，主代码树有",
+      "range": {
+        "startLine": 13,
+        "startChar": 3,
+        "endLine": 17,
+        "endChar": 3
+      },
+      "revId": "3ff7196a0d02afd7bba319dcec19af24e0af22d1",
+      "serverId": "83d63960-fecf-4fd1-a7f6-e01518638a62",
+      "unresolved": false
+    }
+  ]
+}
