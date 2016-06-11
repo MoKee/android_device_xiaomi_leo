@@ -29,7 +29,9 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 #chargeonlymode
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/sbin/chargeonlymode:root/sbin/chargeonlymode
+    $(LOCAL_PATH)/rootdir/etc/sbin/chargeonlymode:root/sbin/chargeonlymode \
+    $(LOCAL_PATH)/rootdir/etc/sbin/qcrypto_module.ko:root/sbin/qcrypto_module.ko \
+    $(LOCAL_PATH)/rootdir/etc/sbin/qdrbg_module.ko:root/sbin/qdrbg_module.ko
 
 # Qcom init scripts for /etc
 PRODUCT_PACKAGES += \
@@ -225,7 +227,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WiFi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin 
 
 PRODUCT_PACKAGES += \
     libqsap_sdk \
