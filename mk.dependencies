@@ -1,8 +1,7 @@
 [
   {
-    "repository": "android_kernel_xiaomi_libra",
-    "branch": "mkm",
-    "target_path": "kernel/xiaomi/libra"
+    "repository": "android_kernel_xiaomi_leo",
+    "target_path": "kernel/xiaomi/leo"
   },
   {
     "repository": "android_vendor_xiaomi_leo",
@@ -11,5 +10,9 @@
   {
     "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common"
+  },
+  {
+    "repository": "android_external_mm-dash",
+    "target_path": "external/mm-dash"
   }
 ]

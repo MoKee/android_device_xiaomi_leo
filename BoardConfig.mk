@@ -49,7 +49,7 @@ COMMON_GLOBAL_CFLAGS += \
     -DPRE_BT_FIRMWARE_PATH
     
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/xiaomi/libra
+TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
 TARGET_KERNEL_CONFIG := leo_user_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 ramoops_memreserve=2M androidboot.selinux=permissive
 
