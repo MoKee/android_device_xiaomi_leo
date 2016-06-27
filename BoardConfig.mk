@@ -27,6 +27,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 TARGET_CPU_SMP := true
 
+#some flags to make blobs work
+COMMON_GLOBAL_CFLAGS += \
+    -DPRE_BT_FIRMWARE_PATH
+
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_ION := true
