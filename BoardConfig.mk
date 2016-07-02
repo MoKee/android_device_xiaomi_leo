@@ -102,7 +102,7 @@ BOARD_USE_LEGACY_UI := true
 
 #Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/leo/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/xiaomi/libra
+TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
 TARGET_KERNEL_CONFIG := cyanogenmod_leo_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 ramoops_memreserve=2M androidboot.selinux=disabled
 BOARD_KERNEL_SEPARATED_DT := true
@@ -127,9 +127,9 @@ TARGET_KERNEL_MODULES += WLAN_MODULES
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864 #64M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864 #64M
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2013265920 #1920M
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1744830464 #1920M
 BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184 #384M
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 27980184576 #26G
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 59852700672 #58G
 TARGET_USERIMAGES_USE_EXT4 := true
 ifneq (,$(filter linux darwin, $(HOST_OS)))
 TARGET_USERIMAGES_USE_F2FS := true
