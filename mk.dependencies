@@ -14,7 +14,7 @@
   {
     "repository": "android_kernel_xiaomi_libra",
     "branch": "mkm",
-    "target_path": "kernel/xiaomi/libra"
+    "target_path": "kernel/xiaomi/leo"
   },
   {
     "repository": "android_vendor_xiaomi_leo",
