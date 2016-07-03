@@ -99,8 +99,7 @@ BOARD_USE_LEGACY_UI := true
 
 #Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/leo/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/xiaomi/libra
-#TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
+TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
 TARGET_KERNEL_CONFIG := cyanogenmod_leo_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 ramoops_memreserve=2M androidboot.selinux=disabled
 BOARD_KERNEL_SEPARATED_DT := true
