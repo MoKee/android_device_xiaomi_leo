@@ -8,8 +8,9 @@ TARGET_OTA_ASSERT_DEVICE := NotePro,leo
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxxhdpi-4096-hwui-memory.mk)
+# Dalvik/HWUI
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
 
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -117,10 +118,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8992 \
+    audio.primary.msm8994 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8992 \
+    audio_policy.msm8994 \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -225,6 +226,11 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8994
+
+
+#workaround
+PRODUCT_PACKAGES += \
+    libboringssl-compat
 
 # Sensors
 PRODUCT_PACKAGES += \

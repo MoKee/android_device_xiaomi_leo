@@ -10,5 +10,10 @@
   {
     "repository":"android_vendor_qcom_binaries",
     "target_path":"vendor/qcom/binaries"
+  },
+  {
+    "repository": "android_external_sony_boringssl-compat",
+    "target_path": "external/sony_boringssl-compat"
   }
+
 ]
