@@ -1,16 +1,16 @@
-LOCAL_PATH := device/xiaomi/libra
+LOCAL_PATH := device/xiaomi/leo
 
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/xiaomi/libra/BoardConfigVendor.mk
+-include vendor/xiaomi/leo/BoardConfigVendor.mk
 
 #Platform
-TARGET_BOARD_PLATFORM := msm8992
-TARGET_BOOTLOADER_BOARD_NAME := msm8992
-ARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := msm8994
+TARGET_BOOTLOADER_BOARD_NAME := msm8994
+TARGET_NO_BOOTLOADER := true
 BOOTLOADER_PLATFORM := msm8994 # use msm8994 LK configuration
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno418
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
 TARGET_BOARD_SUFFIX := _64
 
 #Arch
@@ -18,13 +18,12 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53.a57
-TARGET_CPU_CORTEX_A53 := true
+TARGET_2ND_CPU_VARIANT := cortex-a7
 
 ENABLE_CPUSETS := true
 
@@ -87,7 +86,7 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_HAS_QCA_BT_ROME := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/libra/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/leo/bluetooth
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 WCNSS_FILTER_USES_SIBS := true
@@ -96,9 +95,9 @@ USE_OPENGL_RENDERER := true
 BOARD_USE_LEGACY_UI := true
 
 #Kernel
-#BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/libra/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/xiaomi/libra
-TARGET_KERNEL_CONFIG := libra_user_defconfig
+#BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/leo/mkbootimg.mk
+TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
+TARGET_KERNEL_CONFIG := leo_user_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 ramoops_memreserve=2M androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE        := 0x00000000
@@ -122,9 +121,9 @@ TARGET_KERNEL_MODULES += WLAN_MODULES
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864 #64M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864 #64M
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2013265920 #1920M
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1744830464 #1920M
 BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184 #384M
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 27980184576 #26G
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 59852700672 #58G
 TARGET_USERIMAGES_USE_EXT4 := true
 ifneq (,$(filter linux darwin, $(HOST_OS)))
 TARGET_USERIMAGES_USE_F2FS := true
@@ -152,7 +151,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_HAL_STATIC_LIBRARIES += \
-    libhealthd.msm8992
+    libhealthd.msm8994
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
@@ -172,17 +171,15 @@ BOARD_USES_QCOM_HARDWARE := true
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
+# QC_AV
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
-# MKHW
-BOARD_USES_MOKEE_HARDWARE := true
-BOARD_HARDWARE_CLASS := \
-    hardware/mokee/mkhw \
-    device/xiaomi/libra/mkhw
-
-# dt2w
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0070/input/input1/wake_gesture"
+# CMHW
+BOARD_HARDWARE_CLASS := device/xiaomi/leo/cmhw \
+     hardware/cyanogen/cmhw
 
 # Ril
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
@@ -232,4 +229,4 @@ endif
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/xiaomi/libra/sepolicy
+BOARD_SEPOLICY_DIRS += device/xiaomi/leo/sepolicy

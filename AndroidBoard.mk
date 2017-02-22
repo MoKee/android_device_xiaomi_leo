@@ -2,12 +2,12 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-#include kernel/xiaomi/libra/AndroidKernel.mk
+#include kernel/xiaomi/leo/AndroidKernel.mk
 
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # include the non-open-source counterpart to this file
--include vendor/xiaomi/libra/AndroidBoardVendor.mk
+-include vendor/xiaomi/leo/AndroidBoardVendor.mk
 
 # Create symbolic links
 $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld; \

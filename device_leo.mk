@@ -1,10 +1,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/xiaomi/libra/libra-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/leo/leo-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/xiaomi/libra/overlay
+DEVICE_PACKAGE_OVERLAYS += device/xiaomi/leo/overlay
 
-TARGET_OTA_ASSERT_DEVICE := 4C,libra
+TARGET_OTA_ASSERT_DEVICE := NotePro,leo
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8992 \
+    gps.msm8994 \
     flp.conf \
     gps.conf \
     izat.conf \
@@ -161,14 +161,14 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8992
+    gps.msm8994
 
 # Graphics
 PRODUCT_PACKAGES += \
-    copybit.msm8992 \
-    gralloc.msm8992 \
-    hwcomposer.msm8992 \
-    memtrack.msm8992 \
+    copybit.msm8994 \
+    gralloc.msm8994 \
+    hwcomposer.msm8994 \
+    memtrack.msm8994 \
     liboverlay \
     libtinyxml
 
@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \
 
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.msm8992
+    keystore.msm8994
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -195,7 +195,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8992
+    lights.msm8994
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -224,11 +224,11 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8992
+    power.msm8994
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8992
+    sensors.msm8994
 
 # Multi HAL configuration file
 PRODUCT_COPY_FILES += \
@@ -253,16 +253,16 @@ PRODUCT_PACKAGES += \
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
 
-PRODUCT_NAME := full_libra
-PRODUCT_DEVICE := libra
+PRODUCT_NAME := full_leo
+PRODUCT_DEVICE := leo
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := Mi-4c
+PRODUCT_MODEL := Mi Note Pro
 
 # Init scripts
 PRODUCT_PACKAGES += \

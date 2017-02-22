@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_DEVICE),libra)
+ifeq ($(TARGET_DEVICE),leo)
 
 LOCAL_PATH := $(call my-dir)
 

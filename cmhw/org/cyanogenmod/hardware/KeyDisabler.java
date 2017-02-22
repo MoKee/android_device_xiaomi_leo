@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package org.mokee.hardware;
+package org.cyanogenmod.hardware;
 
-import org.mokee.internal.util.FileUtils;
-
+import org.cyanogenmod.hardware.util.FileUtils;
 import java.io.File;
 
 /*
@@ -31,17 +30,16 @@ import java.io.File;
 
 public class KeyDisabler {
 
-    private static String CONTROL_PATH = "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0070/input/input1/0dbutton";
+    private static String GPIO_CONTROL_PATH = "/sys/devices/soc.0/gpio_keys.87/disabled_keys";
 
-    public static boolean isSupported() {
-        return FileUtils.isFileWritable(CONTROL_PATH);
-    }
+    public static boolean isSupported() { return true; }
 
     public static boolean isActive() {
-        return FileUtils.readOneLine(CONTROL_PATH).equals("0");
+        return (FileUtils.readOneLine(GPIO_CONTROL_PATH).equals("102,139,158"));
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
+        return FileUtils.writeLine(GPIO_CONTROL_PATH, (state ? "102,139,158" : " "));
     }
+
 }
