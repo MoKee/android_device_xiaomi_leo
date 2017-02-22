@@ -447,3 +447,4 @@ on property:persist.sys.aries.power_profile=low
     stop thermal-engine
     write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 0
     start thermal-engine
+
