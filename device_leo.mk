@@ -234,7 +234,7 @@ PRODUCT_PACKAGES += \
 
 # Multi HAL configuration file
 PRODUCT_COPY_FILES += \
-    device/xiaomi/libra/configs/hals.conf:system/etc/sensors/hals.conf
+    device/xiaomi/leo/configs/hals.conf:system/etc/sensors/hals.conf
 
 # USB
 PRODUCT_PACKAGES += \
