@@ -97,7 +97,7 @@ BOARD_USE_LEGACY_UI := true
 #Kernel
 #BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/leo/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
-TARGET_KERNEL_CONFIG := libra_user_defconfig
+TARGET_KERNEL_CONFIG := leo_user_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 ramoops_memreserve=2M androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE        := 0x00000000
@@ -134,6 +134,10 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+
+# CNE and DPM
+TARGET_LDPRELOAD := libNimsWrap.so
+BOARD_USES_QCNE := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true

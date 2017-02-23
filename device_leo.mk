@@ -36,17 +36,31 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
     $(LOCAL_PATH)/audio/surround_sound_3mic/surround_sound_rec_AZ.cfg:system/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 
+
+#permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
+    $(LOCAL_PATH)/permissions/com.qti.snapdragon.sdk.display.xml:system/etc/permissions/com.qti.snapdragon.sdk.display.xml \
+    $(LOCAL_PATH)/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
+    $(LOCAL_PATH)/permissions/dpmapi.xml:system/etc/permissions/dpmapi.xml \
+    $(LOCAL_PATH)/permissions/embms.xml:system/etc/permissions/embms.xml \
+    $(LOCAL_PATH)/permissions/interface_permissions.xml:system/etc/permissions/interface_permissions.xml \
+    $(LOCAL_PATH)/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
+    $(LOCAL_PATH)/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
+    $(LOCAL_PATH)/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
+
 #Sensor
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sensor/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/sensor/sensor_diag.cfg:system/etc/sensor_diag.cfg
 
 #keylayout
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ft5x46.kl:system/usr/keylayout/ft5x46.kl \
-    $(LOCAL_PATH)/atmel-maxtouch.kl:system/usr/keylayout/atmel-maxtouch.kl \
-    $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/synaptics_dsx_edge.kl:system/usr/keylayout/synaptics_dsx_edge.kl \
-    $(LOCAL_PATH)/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl
+    $(LOCAL_PATH)/keylayout/cyttsp_button.kl:system/usr/keylayout/cyttsp_button.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
+    $(LOCAL_PATH)/keylayout/msm8994-tomtom-snd-card_Button_Jack.kl:system/usr/keylayout/msm8994-tomtom-snd-card_Button_Jack.kl \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl
 
 #hostapd
 PRODUCT_COPY_FILES += \
@@ -127,16 +141,32 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+PRODUCT_PACKAGES += \
+    libaudio-resampler \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcompostprocbundle
+
+# Bson
+PRODUCT_PACKAGES += \
+    libbson
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
+    CNEService \
     cneapiclient \
     com.quicinc.cne \
     libcnefeatureconfig \
     services-ext
+
+# Curl
+PRODUCT_PACKAGES += \
+    libcurl \
+    curl
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -154,6 +184,18 @@ PRODUCT_PACKAGES += \
     quipc.conf \
     sap.conf \
     xtwifi.conf
+    
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf \
+    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
+
+# DPM
+PRODUCT_PACKAGES += \
+    com.qti.dpmframework \
+    dpmapi
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -175,7 +217,8 @@ PRODUCT_PACKAGES += \
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes
+    ethertypes \
+    libebtc
 
 # Camrera
 PRODUCT_PACKAGES += \
@@ -222,6 +265,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8994
 
+# Ril
+PRODUCT_PACKAGES += \
+    libtinyxml2 \
+    libxml2
 
 #workaround
 PRODUCT_PACKAGES += \
@@ -230,6 +277,17 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8994
+    
+#stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
+# CameraWrapper
+PRODUCT_PACKAGES += \
+    camera.msm8994 \
+    libcamera_shim
+
+
 
 # Multi HAL configuration file
 PRODUCT_COPY_FILES += \
@@ -282,3 +340,21 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     ueventd.qcom.rc \
     fstab.qcom
+
+# Emergency call overrides for Korea,China
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.ecc_hard_count=1 \
+    persist.radio.ecc_hard_1=111,113,117,122,125,110,120,119
+
+# for perfd
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.min_freq_0=384000
+    ro.min_freq_4=384000
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so
+
+# IO Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=bfq
+
