@@ -231,7 +231,7 @@ persist.radio.ignore_dom_time=5
 # default color_prefer is off
 persist.sys.display_prefer=0
 
-ro.sf.lcd_density=560
+ro.sf.lcd_density=640
 
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.btconfig.if=uart
