@@ -96,10 +96,9 @@ BOARD_USE_LEGACY_UI := true
 
 #Kernel
 #BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/leo/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/xiaomi/leo
-TARGET_KERNEL_CONFIG := leo_user_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 ramoops_memreserve=2M androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_PREBUILT_DT := true
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -110,6 +109,11 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 BOARD_DTBTOOL_ARGS := -2
 BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x0000000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100 --dt device/xiaomi/leo/dt.img
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dt.img:dt.img \
+    $(LOCAL_PATH)/kernel:kernel
 
 WLAN_MODULES:
 	mkdir -p $(KERNEL_MODULES_OUT)/qca_cld
@@ -135,8 +139,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-# CNE and DPM
-TARGET_LDPRELOAD := libNimsWrap.so
+# CNE
 BOARD_USES_QCNE := true
 
 # Camera

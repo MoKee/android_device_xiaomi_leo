@@ -336,9 +336,13 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.hardware.rc \
+    init.recovery.qcom.rc \
+    init.recovery.service.rc \
+    init.recovery.usb.rc \
     init.target.rc \
-    init.qcom.power.rc \
+    init.trace.rc \
     ueventd.qcom.rc \
+    ueventd.rc \
     fstab.qcom
 
 # Emergency call overrides for Korea,China
