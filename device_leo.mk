@@ -275,8 +275,6 @@ PRODUCT_PACKAGES += \
     libboringssl-compat
 
 # Sensors
-PRODUCT_PACKAGES += \
-    sensors.msm8994
     
 #stlport
 PRODUCT_PACKAGES += \
