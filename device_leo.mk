@@ -283,30 +283,6 @@ PRODUCT_PACKAGES += \
     camera.msm8994 \
     libcamera_shim
 
-# Modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
-    $(LOCAL_PATH)/modules/evbug.ko:system/lib/modules/evbug.ko \
-    $(LOCAL_PATH)/modules/gpio_axis.ko:system/lib/modules/gpio_axis.ko \
-    $(LOCAL_PATH)/modules/gpio_event.ko:system/lib/modules/gpio_event.ko \
-    $(LOCAL_PATH)/modules/gpio_input.ko:system/lib/modules/gpio_input.ko \
-    $(LOCAL_PATH)/modules/gpio_matrix.ko:system/lib/modules/gpio_matrix.ko \
-    $(LOCAL_PATH)/modules/gpio_output.ko:system/lib/modules/gpio_output.ko \
-    $(LOCAL_PATH)/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
-    $(LOCAL_PATH)/modules/mcDrvModule.ko:system/lib/modules/mcDrvModule.ko \
-    $(LOCAL_PATH)/modules/mcKernelApi.ko:system/lib/modules/mcKernelApi.ko \
-    $(LOCAL_PATH)/modules/mmc_block_test.ko:system/lib/modules/mmc_block_test.ko \
-    $(LOCAL_PATH)/modules/mmc_test.ko:system/lib/modules/mmc_test.ko \
-    $(LOCAL_PATH)/modules/mpq-adapter.ko:system/lib/modules/mpq-adapter.ko \
-    $(LOCAL_PATH)/modules/mpq-dmx-hw-plugin.ko:system/lib/modules/mpq-dmx-hw-plugin.ko \
-    $(LOCAL_PATH)/modules/qca_cld/qca_cld_wlan.ko:system/lib/modules/qca_cld/qca_cld_wlan.ko \
-    $(LOCAL_PATH)/modules/spidev.ko:system/lib/modules/spidev.ko \
-    $(LOCAL_PATH)/modules/test-iosched.ko:system/lib/modules/test-iosched.ko \
-    $(LOCAL_PATH)/modules/tspp.ko:system/lib/modules/tspp.ko \
-    $(LOCAL_PATH)/modules/ufs_test.ko:system/lib/modules/ufs_test.ko \
-    $(LOCAL_PATH)/modules/wil6210.ko:system/lib/modules/wil6210.ko \
-    $(LOCAL_PATH)/modules/wlan.ko:system/lib/modules/wlan.ko
-
 # Multi HAL configuration file
 PRODUCT_COPY_FILES += \
     device/xiaomi/leo/configs/hals.conf:system/etc/sensors/hals.conf
