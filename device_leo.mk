@@ -245,6 +245,7 @@ PRODUCT_PACKAGES += \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
+    libqcmediaplayer \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxSwVencMpeg4 \
