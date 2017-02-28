@@ -197,10 +197,6 @@ PRODUCT_PACKAGES += \
     com.qti.dpmframework \
     dpmapi
 
-# Doze
-PRODUCT_PACKAGES += \
-    LibraDoze
-
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8994
