@@ -116,6 +116,10 @@ PRODUCT_COPY_FILES += \
 #FEATURE_OPENGLES_EXTENSION_PACK support string config file
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml
+ 
+# Apache Hack
+PRODUCT_COPY_FILES += \
+    prebuilts/sdk/org.apache.http.legacy/org.apache.http.legacy.jar:/system/framework/org.apache.http.legacy.jar
 
 #ANT+ stack
 PRODUCT_PACKAGES += \
