@@ -81,6 +81,21 @@ on boot
     write /proc/sys/kernel/sched_boost 1
     write /proc/sys/vm/dirty_ratio 5
     write /proc/sys/vm/dirty_background_ratio 1
+    
+    write /dev/cpuset/foreground/cpus 0-2,4-7
+    write /dev/cpuset/foreground/boost/cpus 4-7
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-2
+    mkdir /dev/cpuset/top-app/boost
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/top-app/boost/cpus 4-7
+
+    chown system system /dev/cpuset/top-app/boost
+    chown system system /dev/cpuset/top-app/boost/tasks
+
+    chmod 0664 /dev/cpuset/top-app/boost/tasks
+    
+
     chown system system /sys/class/leds/button-backlight/max_brightness
     chown system system /sys/class/leds/button-backlight1/max_brightness
 
