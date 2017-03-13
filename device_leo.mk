@@ -220,10 +220,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8994
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
