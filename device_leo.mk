@@ -215,10 +215,14 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
     libebtc
-
-# Camrera
+    
+# Camera
 PRODUCT_PACKAGES += \
     Snap
+
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8994
 
 # IRSC
 PRODUCT_COPY_FILES += \
