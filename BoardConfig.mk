@@ -181,10 +181,6 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
-# CMHW
-BOARD_HARDWARE_CLASS := device/xiaomi/leo/cmhw \
-     hardware/cyanogen/cmhw
-
 # Ril
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 TARGET_RIL_VARIANT := caf
