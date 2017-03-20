@@ -1,7 +1,7 @@
 # Release name
 PRODUCT_RELEASE_NAME := leo
 
-# Inherit some common CM stuff.
+# Inherit some common MK stuff.
 $(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
 # Inherit device configuration
