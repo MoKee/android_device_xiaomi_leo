@@ -372,4 +372,6 @@
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
    </string-array>
 
+    <!-- Button illumination -->
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 </resources>
