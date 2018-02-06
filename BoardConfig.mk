@@ -156,11 +156,11 @@ BOARD_USES_QCOM_HARDWARE := true
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
+# MKHW
+BOARD_USES_MOKEE_HARDWARE := true
 BOARD_HARDWARE_CLASS := \
-    hardware/cyanogen/cmhw \
-    device/xiaomi/leo/cmhw
+    hardware/mokee/mkhw \
+    device/xiaomi/leo/mkhw
 
 # Ril
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
