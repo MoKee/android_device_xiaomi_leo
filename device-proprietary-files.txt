@@ -462,6 +462,10 @@ vendor/lib/libmmcamera_ov5670_sunny.so
 vendor/lib/libmmcamera_s5k3m2xm.so
 vendor/lib/libmmcamera_s5k3m2xm_ofilm.so
 
+# Display calibration
+etc/pp_calib_data_jdi_fbc20_wqhd_cmd_mode_dsi_panel.xml:vendor/etc/pp_calib_data_jdi_fbc20_wqhd_cmd_mode_dsi_panel.xml
+etc/pp_calib_data_sharp_fbc20_wqhd_cmd_mode_dsi_panel.xml:vendor/etc/pp_calib_data_sharp_fbc20_wqhd_cmd_mode_dsi_panel.xml
+
 # Graphics - kanged from Angler OPM5.171019.017
 vendor/lib/hw/vulkan.msm8994.so|8bd98116b5a586839aad4c93468fc04f044d4ef4
 vendor/lib64/hw/vulkan.msm8994.so|123f72ad06ab296028dc5d14884453630676027f
