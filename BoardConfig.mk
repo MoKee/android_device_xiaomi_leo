@@ -10,15 +10,15 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
 # Arch
 TARGET_CPU_VARIANT := cortex-a53
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
 # Kernel
 TARGET_KERNEL_CONFIG := leo_user_defconfig
 
 # Partition
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1744830464 #1920M
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 59852700672 #58G
-
-# MK Hardware
-JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(DEVICE_PATH)/mkhw|**/*.java
 
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(DEVICE_PATH)/board-info.txt

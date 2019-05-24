@@ -71,11 +71,6 @@ on boot
     write /proc/sys/vm/dirty_ratio 5
     write /proc/sys/vm/dirty_background_ratio 1
 
-    # Keydisabler
-    chown root system /sys/bus/i2c/drivers/cyttsp_streetfighter/2-0028/keys_off
-    chmod 0664 /sys/bus/i2c/drivers/cyttsp_streetfighter/2-0028/keys_off
-    restorecon /sys/bus/i2c/drivers/cyttsp_streetfighter/2-0028/keys_off
-
     write /dev/cpuset/foreground/cpus 0-2,4-7
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
