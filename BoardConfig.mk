@@ -17,8 +17,8 @@ TARGET_KERNEL_CONFIG := leo_user_defconfig
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1744830464 #1920M
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 59852700672 #58G
 
-# MK Hardware
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
+# MoKee Hardware
+JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(DEVICE_PATH)/mkhw|**/*.java
 
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(DEVICE_PATH)/board-info.txt
